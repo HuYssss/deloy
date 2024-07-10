@@ -4,7 +4,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 #Run stage
-FROM openjdk-17
+FROM openjdk-17-slim
 WORKDIR /app
 COPY --from=build /app/target/watchstore-0.0.1-SNAPSHOT.jar watchstore.jar
 EXPOSE 8080
